@@ -28,7 +28,7 @@ function startLookingForVideo() {
         let currentTime = video.currentTime
 
         video.ontimeupdate = (e) => {
-            ipcRenderer.send('EVENT_VIDEO_TIME_UPDATE', video.currentTime, video.duration)
+            ipcRenderer.send('EVENT_VIDEO_TIME_UPDATE', video.currentTime, video.duration, paused)
         }
 
         video.onvolumechange = (e) => {
@@ -76,6 +76,15 @@ ipcRenderer.on('EVENT_PLAY', () => {
         video.play()
     else
         video.pause()
+})
+
+ipcRenderer.on('EVENT_SEEK', (e, newTime) => {
+    var video = getVideo()
+
+    if (video == null)
+        return
+
+    video.currentTime = newTime
 })
 
 window.onload = () => {

@@ -16,7 +16,7 @@ class MTouchBar {
 
     build() {
         this.playButton = new TouchBarButton({
-            icon: this.images.play,
+            icon: this.player.paused ? this.images.play : this.images.pause,
             click: this.player.play
         })
 
@@ -111,6 +111,7 @@ class MTouchBar {
         })
 
         this.player.on('EVENT_VIDEO_TIME_UPDATE', (currentTime, duration) => {
+            this.updatePP(this.player.paused)
             this.updateTime(currentTime, duration)
         })
 
