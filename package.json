@@ -2,7 +2,7 @@
   "name": "kekopoisk",
   "version": "1.0.0",
   "description": "Unofficial kinopoisk hd application for desktop",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "start": "electron --inspect .",
     "build": "electron-builder",
@@ -58,9 +58,7 @@
     "mocha": "^9.0.3"
   },
   "dependencies": {
-    "electron-native-notification": "^1.2.1",
-    "electron-store": "^8.0.0",
-    "node-notifier": "^10.0.0"
+    "electron-fast-media-client": "github:Alexanik/electron-fast-media-client"
   },
   "repository": {
     "type": "git",
