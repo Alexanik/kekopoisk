@@ -50,6 +50,7 @@
     }
   },
   "author": "Aleksandr Miroshnikov",
+  "license": "MIT",
   "devDependencies": {
     "electron": "github:castlabs/electron-releases#v13.1.8-wvvmp",
     "electron-builder": "^22.11.7",
